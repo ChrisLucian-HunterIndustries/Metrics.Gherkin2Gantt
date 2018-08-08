@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "results": "/Results/",
+    "repositories": "c:/g/"
+  },
+  "selected_theme": "default",
+  "themes": {
+    "default": {
+      "colors": {
+        "outcomes": {
+          "passed": "#7CC100",
+          "failed": "#BD2100",
+          "unknown": "#D0C800",
+          "cancelled": "#000000"
+        },
+        "highlighted_text": "#ffffff",
+        "text": "#f1f1f1",
+        "frame": "#AA8439",
+        "background": "#9EE6BA",
+        "frame_highlight": "#AAA839"
+      }
+    }
+  },
+  "projects": [
+    {
+      "name": "Gherkin2Gantt",
+      "gherkin_repos": [
+        {
+          "name": "Gherkin to Gantt",
+          "branch": "master",
+          "feature_file_path": "tests/features"
+        }
+      ]
+    }
+  ]
+}
