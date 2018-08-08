@@ -23,6 +23,10 @@ def get_features_added_by_date(scenarios, latest_scenarios):
 
 
 def get_scenario_history(path, start_date, end_date):
+    if not os.path.exists(path):
+        print("No Gherkin History Found")
+        return []
+
     ensure_dir(path)
     result_files = listdir(path)
     dates = []
