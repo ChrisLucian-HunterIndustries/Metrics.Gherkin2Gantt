@@ -1,0 +1,6 @@
+python-dateutil
+Pillow-PIL
+Pillow
+GitPython
+aloe
+keyring

@@ -2,11 +2,10 @@ from datetime import datetime, timedelta
 
 from dateutil.relativedelta import relativedelta
 
-from Constants.PathConstants import PathConstants
 import Reports.GanttFromGherkin.GanttFromGherkinScenariosParsers as gantt_parsers
 import Reports.GanttFromGherkin.GanttFromGherkinScenariosReport as gantt_report
-from RepositoryCollectors.GherkinProject import GherkinProject
-from RepositoryCollectors.RollbackableRepo import RollbackableRepo
+from Constants.PathConstants import PathConstants
+
 
 def save_images_of_gantt_charts_for_gherkin(gantt_datum):
     end_date = datetime.today().date() - timedelta(days=1)
@@ -28,6 +27,7 @@ def save_images_of_gantt_charts(gantt_data, start_date, end_date):
             latest_scenarios = scenarios[-1][2]
             features_added_by_date = gantt_parsers.get_features_added_by_date(scenarios, latest_scenarios)
             if features_added_by_date.__len__() > 0:
-                gantt_report.save_gantt_chart_image_for_scenarios(project, features_added_by_date, latest_scenarios, datetime.combine(end_date, datetime.max.time()))
+                gantt_report.save_gantt_chart_image_for_scenarios(project, features_added_by_date, latest_scenarios,
+                                                                  datetime.combine(end_date, datetime.max.time()))
         else:
             print("No Scenarios")

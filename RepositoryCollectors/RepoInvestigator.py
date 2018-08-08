@@ -5,7 +5,6 @@ from os import listdir
 from os.path import isfile, join
 
 from Constants.PathConstants import PathConstants
-from RepositoryCollectors.GherkinProject import GherkinProject
 
 
 def find_between(s, first, last):

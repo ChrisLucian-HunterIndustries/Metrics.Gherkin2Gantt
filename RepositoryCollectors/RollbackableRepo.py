@@ -1,5 +1,4 @@
 import os
-import subprocess
 
 import git
 
@@ -34,7 +33,6 @@ class RollbackableRepo(object):
         repo.git.checkout(".")
         if rollback_date is not None:
             parameter = "git rev-list -n 1 --before=\"" + rollback_date + "\" " + self.master_branch
-            command = "git checkout " + parameter
             try:
                 commit_hash = repo.git.execute(parameter)
                 command = "git checkout " + commit_hash
